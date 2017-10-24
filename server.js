@@ -6,6 +6,11 @@ var showdown  = require('showdown');
     var bodyParser = require('body-parser').json();
     
     var app = express();
+
+app.get('/api/ping', function (req, res) {
+    res.send({ message: 'pong' });
+});
+
     //app.use(express.static(path.join(__dirname, 'app')));
     app.post('/api/convertMdToHtml',bodyParser, function(req, res) {
         console.log('received data: ' + req.body);
